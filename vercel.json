@@ -1,0 +1,9 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/style.css", "destination": "/SmartSpamAI/frontend/style.css" },
+    { "source": "/script.js", "destination": "/SmartSpamAI/frontend/script.js" },
+    { "source": "/assets/(.*)", "destination": "/SmartSpamAI/frontend/assets/$1" },
+    { "source": "/(.*)", "destination": "/SmartSpamAI/frontend/index.html" }
+  ]
+}

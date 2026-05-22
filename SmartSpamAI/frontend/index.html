@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartSpam AI</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons Library -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+
+  <!-- Background Gradient Blobs -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <div class="icon-box red-icon-box">
+        <i data-lucide="shield" class="text-red"></i>
+      </div>
+      <span class="logo-text">Smart<span class="text-red">Spam</span> AI</span>
+    </div>
+    <div class="nav-links">
+      <a href="#platform">Platform</a>
+      <a href="#features">Features</a>
+      <a href="#scanner">Intelligence</a>
+    </div>
+    <a href="#scanner" class="btn btn-outline-red">
+      <i data-lucide="scan"></i> Launch Scanner
+    </a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="platform" class="hero-section">
+    <!-- Canvas for Particle Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge red-badge slide-up-1">
+          <i data-lucide="activity"></i> AI-POWERED THREAT INTELLIGENCE
+        </div>
+        <h1 class="hero-title slide-up-2">
+          Real-Time AI<br />
+          <span class="text-red glow-text">Threat Intelligence</span><br />
+          for SMS & Email
+        </h1>
+        <p class="hero-subtitle slide-up-3">
+          Detect spam, phishing, scam links, malicious URLs, and suspicious communication using Machine Learning & NLP —
+          in milliseconds.
+        </p>
+        <div class="hero-actions slide-up-4">
+          <a href="#scanner" class="btn btn-primary scan-btn">
+            <i data-lucide="scan"></i> Launch Scanner <i data-lucide="chevron-right"></i>
+          </a>
+          <a href="#features" class="btn btn-link">
+            View Features <i data-lucide="chevron-right"></i>
+          </a>
+        </div>
+
+        <div class="hero-stats fade-in-delay">
+          <div class="stat-item">
+            <div class="stat-value">ML + NLP</div>
+            <div class="stat-label">Engine</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">FastAPI</div>
+            <div class="stat-label">Backend</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">REST API</div>
+            <div class="stat-label">Ready</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Side: Neural Orb Animation -->
+      <div class="hero-visual zoom-in">
+        <div class="neural-orb">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+          <div class="ring ring-3"></div>
+          <div class="core">
+            <div class="core-glow"></div>
+            <i data-lucide="shield" class="core-icon text-red"></i>
+          </div>
+          <div class="floating-badge badge-sms"><i data-lucide="message-square"></i> SMS</div>
+          <div class="floating-badge badge-email"><i data-lucide="mail"></i> EMAIL</div>
+          <div class="floating-badge badge-url"><i data-lucide="globe"></i> URL</div>
+          <div class="floating-badge badge-threat"><i data-lucide="alert-triangle"></i> THREAT</div>
+          <div class="floating-badge badge-safe"><i data-lucide="check-circle"></i> SAFE</div>
+        </div>
+      </div>
+    </div>
+  </section> <!-- SCANNER PANEL SECTION -->
+  <section id="scanner" class="scanner-section">
+    <div class="container-sm">
+      <div class="section-header text-center reveal">
+        <div class="badge red-badge center">
+          <i data-lucide="cpu"></i> AI DETECTION ENGINE
+        </div>
+        <h2 class="section-title">AI Detection <span class="text-red">Panel</span></h2>
+        <p class="section-subtitle">Paste any suspicious message and let the model classify it instantly.</p>
+      </div>
+
+      <!-- Quick Test Examples Section -->
+      <div class="quick-examples reveal">
+        <span class="examples-title"><i data-lucide="sparkles"></i> Click a template to test:</span>
+        <div class="examples-grid">
+          <button class="example-btn threat"
+            data-text="Dear Customer, your SBI account is blocked. Verify KYC now at http://sbi-verify.net to activate immediately.">
+            <i data-lucide="alert-octagon"></i> Phishing SMS
+          </button>
+          <button class="example-btn threat"
+            data-text="Congratulations! You have won a cash prize of Rs. 1,00,000. Click here http://lottery-claim.in to claim your reward now!">
+            <i data-lucide="gift"></i> Lottery Scam
+          </button>
+          <button class="example-btn safe"
+            data-text="Hey, are you free for the meeting at 4 PM today? Let me know if that works.">
+            <i data-lucide="check-circle-2"></i> Normal Chat
+          </button>
+          <button class="example-btn safe"
+            data-text="Your A/c ending 1234 has been credited with Rs 5,000 on 20-May-2026. Available balance is Rs 15,262. - Axis Bank">
+            <i data-lucide="wallet"></i> Bank SMS
+          </button>
+        </div>
+      </div>
+
+      <!-- Input Card -->
+      <div class="scanner-card reveal" id="scanner-card">
+        <div class="scanner-corner-glow"></div>
+        <div class="scanner-header">
+          <div class="status-dot" id="terminal-status-dot"></div>
+          <span class="status-text" id="terminal-status-text">THREAT ANALYSIS TERMINAL</span>
+        </div>
+
+        <div class="input-group">
+          <textarea id="scan-input" rows="6" placeholder="Paste suspicious SMS or email content..."></textarea>
+          <button id="clear-btn" class="clear-btn hidden" title="Clear input"><i data-lucide="x"></i></button>
+        </div>
+
+        <button id="submit-btn" class="btn btn-primary scan-btn full-width disabled">
+          <span id="btn-text"><i data-lucide="scan"></i> AI SCAN &amp; ANALYZE</span>
+          <span id="btn-loading" class="hidden"><i data-lucide="activity" class="spin-fast"></i> SECURING SCAN
+            CHANNEL...</span>
+        </button>
+
+        <!-- Preprocessing Terminal-style Steps -->
+        <div id="scanner-steps" class="scanner-steps hidden">
+          <div class="step-item" id="step-1">
+            <i data-lucide="circle-dashed" class="step-icon"></i>
+            <span class="step-text">Preprocessing text (lowercase, punctuation, stopwords)...</span>
+          </div>
+          <div class="step-item" id="step-2">
+            <i data-lucide="circle-dashed" class="step-icon"></i>
+            <span class="step-text">Transforming via TF-IDF Vectorizer...</span>
+          </div>
+          <div class="step-item" id="step-3">
+            <i data-lucide="circle-dashed" class="step-icon"></i>
+            <span class="step-text">Evaluating through Naive Bayes classifier...</span>
+          </div>
+        </div>
+
+        <div id="error-box" class="error-box hidden">
+          <div class="error-header">
+            <i data-lucide="alert-triangle"></i>
+            <span class="error-title">SYSTEM DIAGNOSTIC FAULT</span>
+          </div>
+          <div id="error-text" class="error-body"></div>
+        </div>
+      </div>
+
+      <!-- Dynamic Result Card -->
+      <div id="result-card" class="result-card hidden">
+        <div class="result-corner-glow" id="result-corner-glow"></div>
+
+        <div class="result-header">
+          <div class="result-icon-box" id="result-icon-box">
+            <i id="result-icon"></i>
+          </div>
+          <div class="result-title-group">
+            <div class="result-subtitle" id="result-subtitle">THREAT DETECTED</div>
+            <div class="result-title" id="result-title">SPAM / MALICIOUS</div>
+          </div>
+          <div class="result-score-group">
+            <div class="result-score" id="result-score">97%</div>
+            <div class="result-score-label">confidence</div>
+          </div>
+        </div>
+
+        <!-- Primary Spam Probability Progress Bar -->
+        <div class="main-probability-container">
+          <div class="probability-header">
+            <span>Overall Spam Risk Index</span>
+            <span id="probability-percentage">0%</span>
+          </div>
+          <div class="probability-track">
+            <div id="probability-fill" class="probability-fill"></div>
+          </div>
+        </div>
+
+        <!-- Highlighted Keywords Section -->
+        <div class="keyword-analysis-section">
+          <div class="section-subtitle-small"><i data-lucide="scan"></i> DETECTED RISK HIGHLIGHTS:</div>
+          <div id="highlighted-text" class="highlighted-text-box"></div>
+        </div>
+
+        <!-- Sub-Threat Progress Bars -->
+        <div class="threat-bars" id="threat-bars"></div>
+
+        <div class="result-message" id="result-message"></div>
+
+        <!-- Result Action Bar -->
+        <div class="result-actions">
+          <button id="copy-report-btn" class="btn btn-secondary-cyber btn-sm">
+            <i data-lucide="copy" class="btn-icon"></i> Copy Analysis Report
+          </button>
+        </div>
+      </div>
+
+      <!-- Prediction History Section -->
+      <div class="history-card reveal" id="history-card">
+        <div class="history-header">
+          <div class="history-title-group">
+            <i data-lucide="history" class="text-red"></i>
+            <span class="history-title">Scanner History Logs</span>
+          </div>
+          <button id="clear-history-btn" class="btn-clear-history hidden" title="Clear History">
+            <i data-lucide="trash-2"></i> Clear History
+          </button>
+        </div>
+        <div class="history-table-container">
+          <table class="history-table">
+            <thead>
+              <tr>
+                <th>Timestamp</th>
+                <th>Sample Message</th>
+                <th>Classification</th>
+                <th>Confidence</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="history-body">
+              <tr id="history-empty-row">
+                <td colspan="5" class="empty-state">No scans recorded yet. Try scanning a message above!</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section id="features" class="features-section">
+    <div class="container">
+      <div class="section-header text-center reveal">
+        <div class="badge red-badge center">
+          <i data-lucide="shield"></i> PLATFORM CAPABILITIES
+        </div>
+        <h2 class="section-title">Built for <span class="text-red">Modern Threats</span></h2>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card reveal-card">
+          <div class="feature-icon-box"><i data-lucide="zap" class="text-red"></i></div>
+          <h3 class="feature-title">Real-Time Threat Detection</h3>
+          <p class="feature-desc">Millisecond-latency inference pipeline classifies incoming messages instantly with
+            zero-lag response.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="feature-card reveal-card">
+          <div class="feature-icon-box"><i data-lucide="brain" class="text-red"></i></div>
+          <h3 class="feature-title">NLP-Based Classification</h3>
+          <p class="feature-desc">Advanced transformer-based NLP dissects linguistic patterns, tone, and semantic
+            structures for deep analysis.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="feature-card reveal-card">
+          <div class="feature-icon-box"><i data-lucide="link" class="text-red"></i></div>
+          <h3 class="feature-title">Phishing URL Detection</h3>
+          <p class="feature-desc">Embedded URL scanner checks against threat databases and evaluates domain reputation
+            in real time.</p>
+        </div>
+        <!-- Feature 4 -->
+        <div class="feature-card reveal-card">
+          <div class="feature-icon-box"><i data-lucide="bar-chart-3" class="text-red"></i></div>
+          <h3 class="feature-title">Confidence Scoring</h3>
+          <p class="feature-desc">Every prediction ships with a calibrated probability score so you always know the
+            certainty level.</p>
+        </div>
+        <!-- Feature 5 -->
+        <div class="feature-card reveal-card">
+          <div class="feature-icon-box"><i data-lucide="cpu" class="text-red"></i></div>
+          <h3 class="feature-title">ML-Powered Prediction</h3>
+          <p class="feature-desc">Trained on diverse multilingual datasets with continuous learning loops for
+            ever-improving accuracy.</p>
+        </div>
+        <!-- Feature 6 -->
+        <div class="feature-card reveal-card">
+          <div class="feature-icon-box"><i data-lucide="lock" class="text-red"></i></div>
+          <h3 class="feature-title">Secure API Architecture</h3>
+          <p class="feature-desc">FastAPI backend with input validation, rate limiting, and encrypted transport for
+            enterprise-grade security.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <div class="icon-box red-icon-box mini">
+        <i data-lucide="shield" class="text-red icon-small" style="width: 14px; height: 14px;"></i>
+      </div>
+      <span class="logo-text">Smart<span class="text-red">Spam</span> AI</span>
+    </div>
+    <p class="footer-desc">Developed by Sanika | Built with Pure HTML/CSS/JS & FastAPI</p>
+    <div class="footer-status">
+      <div class="status-dot green"></div>
+      <span>API Operational</span>
+    </div>
+  </footer>
+
+  <!-- Main Logic -->
+  <script src="script.js"></script>
+</body>
+
+</html>
