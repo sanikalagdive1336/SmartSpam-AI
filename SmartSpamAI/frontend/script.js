@@ -106,7 +106,7 @@ const scannerSteps = document.getElementById('scanner-steps');
 const copyReportBtn = document.getElementById('copy-report-btn');
 
 // Deployed Render backend API URL
-const API_URL = "https://smartspam-ml-backend.onrender.com/predict";
+const API_URL = "https://smartspam-ai-zko3.onrender.com/predict";
 
 // State to store current result for copy report functionality
 let currentResult = null;
